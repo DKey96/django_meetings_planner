@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %} <!-- replaces by title in  base.html-->
+
+{% block content %} <!-- replaces body in base.html -->
+    <h1>Welcome to the meeting planner page!</h1>
+    <p>
+        This is just a paragraph with no meaning.
+    </p>
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+        <li>
+            <a href="{% url 'detail' meeting.id %}">
+                {{meeting.title}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

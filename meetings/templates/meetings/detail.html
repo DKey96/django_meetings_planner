@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Detail page{% endblock %} <!-- replaces by title in  base.html-->
+
+{% block content %} <!-- replaces body in base.html -->
+  <h1>Here is your meeting</h1>
+    <p>
+        Meeting starts at {{ meeting.start_time }} and is for {{ meeting.duration }} h long
+    </p>
+    <p>
+        <a href="{% url 'home' %}">Home</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Details page{% endblock %} <!-- replaces by title in  base.html-->
+
+{% block content %} <!-- replaces body in base.html -->
+  <h1>Here are supported meeting rooms</h1>
+    <ul>
+        {% for room in rooms %}
+        <li>
+            Name: {{ room.name }}
+            Link: <a href="{% url 'room' room.id %}">Here</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
